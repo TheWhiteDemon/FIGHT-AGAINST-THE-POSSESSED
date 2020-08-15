@@ -12,24 +12,7 @@ namespace StatusBarKind {
     export const Player = StatusBarKind.create()
 }
 controller.combos.attachCombo("d+a", function () {
-    Big_bomb_1 = sprites.createProjectileFromSprite(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . 2 2 2 2 2 2 2 2 2 . . . . 
-        2 2 f f f f f f f f f f 2 2 . . 
-        2 f f f f f f f f f f f f f f . 
-        2 f f f f f f f f f f f f f f 2 
-        2 f f f f f f f f f f f f f f 2 
-        2 2 f f f f f f f f f f f f f 2 
-        2 2 f f f f f f f f f f f f f 2 
-        . 2 2 2 2 f f f f f f f f f f 2 
-        . . . . . 2 2 2 f 2 f f 2 f 2 2 
-        . . . . . . . . . . . . . 2 2 . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, Player_1, 50, 50)
+    Big_bomb_1 = 0
     Big_bomb_2 = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -121,24 +104,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy1, function (sprite, otherS
     myEnemy.destroy(effects.rings, 1000)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    projectile = sprites.createProjectileFromSprite(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . 2 . . . . . . . . . . . . . . 
-        2 2 2 2 2 2 2 2 . . . . . . . . 
-        2 2 2 2 2 2 2 2 2 2 . . . . . . 
-        2 2 2 2 2 2 2 2 2 2 . . . . . . 
-        2 2 2 2 2 2 2 2 2 . . . . . . . 
-        2 2 2 2 2 2 2 2 . . . . . . . . 
-        2 2 2 . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, Player_1, 200, 0)
     Projectile_2 = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -159,61 +124,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         `, Player_2, 200, 0)
 })
 controller.combos.attachCombo("a+b", function () {
-    Double_pro1 = sprites.createProjectileFromSprite(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . 2 2 . . . . . . . 
-        . . . . . . 2 2 2 2 2 . . . . . 
-        . . . . 2 2 2 2 2 2 2 2 2 2 . . 
-        . . . 2 2 2 2 2 2 2 2 2 2 2 2 . 
-        . . . 2 2 2 2 2 2 2 2 2 2 2 2 . 
-        . . 2 2 2 2 2 2 2 2 2 2 2 2 2 . 
-        . 2 2 2 2 2 2 2 2 2 2 2 2 2 . . 
-        . 2 2 2 2 2 2 2 2 2 2 2 2 . . . 
-        . . . 2 2 2 2 2 2 2 2 2 . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . 2 . . . 
-        . . . . . . . . . . . . . . . . 
-        `, Player_1, 50, 50)
-    Double_pro_1 = sprites.createProjectileFromSprite(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . 2 2 . . . . . . . 
-        . . . . . . 2 2 2 2 2 . . . . . 
-        . . . . 2 2 2 2 2 2 2 2 2 2 . . 
-        . . . 2 2 2 2 2 2 2 2 2 2 2 2 . 
-        . . . 2 2 2 2 2 2 2 2 2 2 2 2 . 
-        . . 2 2 2 2 2 2 2 2 2 2 2 2 2 . 
-        . 2 2 2 2 2 2 2 2 2 2 2 2 2 . . 
-        . 2 2 2 2 2 2 2 2 2 2 2 2 . . . 
-        . . . 2 2 2 2 2 2 2 2 2 . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . 2 . . . 
-        . . . . . . . . . . . . . . . . 
-        `, Player_1, 50, 50)
     Double_pro_2 = sprites.createProjectileFromSprite(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . 8 8 . . . . . . . 
-        . . . . . . 8 8 8 8 8 . . . . . 
-        . . . . 8 8 8 8 8 8 8 8 8 8 . . 
-        . . . 8 8 8 8 8 8 8 8 8 8 8 8 . 
-        . . . 8 8 8 8 8 8 8 8 8 8 8 8 . 
-        . . 8 8 8 8 8 8 8 8 8 8 8 8 8 . 
-        . 8 8 8 8 8 8 8 8 8 8 8 8 8 . . 
-        . 8 8 8 8 8 8 8 8 8 8 8 8 . . . 
-        . . . 8 8 8 8 8 8 8 8 8 . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . 8 . . . 
-        . . . . . . . . . . . . . . . . 
-        `, Player_2, 50, 50)
-    Double_pro_22 = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . 8 8 . . . . . . . 
@@ -250,15 +161,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     Enemy_2.follow(Player_1)
     Enemy_2.follow(Player_2)
 })
-let Double_pro_22: Sprite = null
 let Double_pro_2: Sprite = null
-let Double_pro_1: Sprite = null
-let Double_pro1: Sprite = null
 let Projectile_2: Sprite = null
-let projectile: Sprite = null
 let anim: animation.Animation = null
 let Big_bomb_2: Sprite = null
-let Big_bomb_1: Sprite = null
+let Big_bomb_1 = 0
 let Enemy_1: Sprite = null
 let Enemy_2: Sprite = null
 let Player_1: Sprite = null
@@ -266,7 +173,7 @@ let myEnemy: Sprite = null
 let statusbar: StatusBarSprite = null
 let Heath_bar: StatusBarSprite = null
 let Player_2: Sprite = null
-game.showLongText("POSSESSED HAS COME! But its your twos job to stop them ", DialogLayout.Top)
+game.showLongText("POSSESSED HAS COME! But its your job to stop them ", DialogLayout.Top)
 game.showLongText("Press A to throw a arrow!", DialogLayout.Top)
 game.showLongText("And figure out those combos!", DialogLayout.Top)
 scene.setBackgroundImage(img`
@@ -436,24 +343,6 @@ statusbar.value = 100
 Heath_bar.value = 100
 controller.player2.moveSprite(Player_2, 100, 100)
 controller.player1.moveSprite(Player_1, 100, 100)
-Player_1 = sprites.create(img`
-    . . . . . . f f f f . . . . . . 
-    . . . . f f f 2 2 f f f . . . . 
-    . . . f f f 2 2 2 2 f f f . . . 
-    . . f f f e e e e e e f f f . . 
-    . . f f e 2 2 2 2 2 2 e e f . . 
-    . . f e 2 f f f f f f 2 e f . . 
-    . . f f f f e e e e f f f f . . 
-    . f f e f b f 4 4 f b f e f f . 
-    . f e e 4 1 f d d f 1 4 e e f . 
-    . . f e e d d d d d d e e f . . 
-    . . . f e e 4 4 4 4 e e f . . . 
-    . . e 4 f 2 2 2 2 2 2 f 4 e . . 
-    . . 4 d f 2 2 2 2 2 2 f d 4 . . 
-    . . 4 4 f 4 4 5 5 4 4 f 4 4 . . 
-    . . . . . f f f f f f . . . . . 
-    . . . . . f f . . f f . . . . . 
-    `, SpriteKind.Player)
 Enemy_2 = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f f f f f f . . . . 
